@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <rect x="0" y="10" width="60" height="60" rx="12" fill="#0B93EE"/>
+  <rect x="8" y="18" width="44" height="44" rx="8" fill="#2BC537" opacity="0.8"/>
+  <text x="30" y="50" text-anchor="middle" font-family="Calibri, sans-serif" font-size="28" font-weight="bold" fill="white">G&amp;A</text>
+  <text x="80" y="42" font-family="Calibri, sans-serif" font-size="26" font-weight="bold" fill="#0A2540">G&amp;A</text>
+  <text x="80" y="62" font-family="Calibri, sans-serif" font-size="16" fill="#0B93EE" font-weight="600">Foundation</text>
+</svg>

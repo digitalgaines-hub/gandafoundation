@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-brand-blue: #0B93EE;
+  --color-brand-green: #2BC537;
+  --color-brand-dark: #0A2540;
+  --color-brand-light: #F8FAFB;
+
+  --font-sans: "Calibri", "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Scroll animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 2px;
+}
+
+/* Gradient hero backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-green) 100%);
+}
