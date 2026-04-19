@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s | G&A Foundation',
   },
   description:
-    'G&A Foundation is a 501(c)(3) nonprofit working to expand access to mental health and substance abuse services across the Bluegrass region of Kentucky.',
+    'G&A Foundation is a 501(c)(3) nonprofit expanding access to mental health and substance abuse services in Kentucky\'s Bluegrass region.',
   metadataBase: new URL('https://gandafoundation.org'),
   openGraph: {
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'G&A Foundation',
     title: 'G&A Foundation | Behavioral Health Access in the Bluegrass',
     description:
-      'G&A Foundation is a 501(c)(3) nonprofit working to expand access to mental health and substance abuse services across the Bluegrass region of Kentucky.',
+      'G&A Foundation is a 501(c)(3) nonprofit expanding access to mental health and substance abuse services in Kentucky\'s Bluegrass region.',
   },
 };
 

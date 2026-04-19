@@ -80,9 +80,13 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="bg-gray-950 text-gray-500 text-xs text-center py-4 px-4">
-        &copy; 2026 G&amp;A Foundation. All rights reserved. G&amp;A Foundation is a
-        501(c)(3) nonprofit organization. EIN: 41-4460409.
+      <div className="bg-gray-950 text-gray-500 text-xs text-center py-4 px-4 space-y-1">
+        <p>
+          G&amp;A Foundation Inc. is a tax-exempt organization under Section 501(c)(3) of the
+          Internal Revenue Code (EIN: 41-4460409). Contributions are tax-deductible to the
+          extent permitted by law.
+        </p>
+        <p>&copy; 2026 G&amp;A Foundation Inc. All rights reserved.</p>
       </div>
     </footer>
   );

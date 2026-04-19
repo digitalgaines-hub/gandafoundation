@@ -28,6 +28,18 @@ export default function DonatePage() {
         </div>
       </section>
 
+      {/* 501(c)(3) Trust Badge */}
+      <section className="pt-10 pb-0 px-4 bg-white">
+        <div className="mx-auto max-w-xl">
+          <div className="flex items-center justify-center gap-2 bg-green-50 text-green-800 text-sm rounded-full px-5 py-2.5">
+            <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+            <span>G&amp;A Foundation Inc. is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the fullest extent of the law.</span>
+          </div>
+        </div>
+      </section>
+
       {/* Online Giving */}
       <section className="py-20 px-4 bg-white">
         <div className="mx-auto max-w-xl">

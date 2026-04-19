@@ -183,6 +183,9 @@ export default function HomePage() {
             >
               Support Our Mission
             </Link>
+            <p className="mt-4 text-xs text-white/60">
+              Tax-deductible donations. EIN: 41-4460409
+            </p>
           </ScrollAnimation>
         </div>
       </section>
