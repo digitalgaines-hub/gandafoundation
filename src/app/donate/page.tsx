@@ -45,10 +45,10 @@ export default function DonatePage() {
         <div className="mx-auto max-w-xl">
           <ScrollAnimation>
             <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-lg border border-gray-100 text-center">
-              <h2 className="text-2xl font-bold text-brand-dark mb-4">Online Giving Coming Soon</h2>
+              <h2 className="text-2xl font-bold text-brand-dark mb-4">Make a Donation</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                We are finalizing our online giving platform. Leave your email below
-                and we will notify you as soon as online donations are available.
+                Choose an amount below to support mental health and substance abuse
+                services in the Bluegrass region.
               </p>
               <DonateForm />
             </div>
