@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import ScrollAnimation from '@/components/ScrollAnimation';
 
 export const metadata: Metadata = {
@@ -6,10 +7,40 @@ export const metadata: Metadata = {
   description: 'Learn about G&A Foundation, our mission, leadership, and values in expanding behavioral health access across the Bluegrass region.',
 };
 
-const boardMembers = [
-  { name: 'Sara Szymkowiak', initials: 'SS' },
-  { name: 'Melissa Barnett', initials: 'MB' },
-  { name: 'Claudia Casasola', initials: 'CC' },
+type Person = {
+  name: string;
+  initials: string;
+  title: string;
+  photo?: string;
+  bio?: string[];
+};
+
+const staff: Person[] = [
+  {
+    name: 'Toni Gaines, LPCC',
+    initials: 'TG',
+    title: 'Founder and Executive Director',
+    photo: '/images/team/toni-gaines-headshot-portrait.webp',
+    bio: [
+      'Toni Gaines is a Licensed Professional Clinical Counselor and the founder of both G&A Counseling and G&A Foundation. With over seven years of experience leading behavioral health services in Madison County, Toni is dedicated to removing barriers to mental health care across the Bluegrass region.',
+    ],
+  },
+];
+
+const boardMembers: Person[] = [
+  {
+    name: 'Sara Szymkowiak',
+    initials: 'SS',
+    title: 'Board Chair',
+    photo: '/images/team/sara-headshot-portrait.webp',
+    bio: [
+      'Sara has dedicated much of her career to serving children and families in her community. Her experience in education has shaped her belief in the importance of advocacy, collaboration, and building strong support systems for individuals in every stage of life.',
+      'In addition to G&A Foundation, Sara currently serves on three other nonprofit boards: Thompson Scholars Foundation, Parent Teacher Association (PTA), and Site-based Decision Making (SBDM) Council. Through these roles she continues to advocate for students, families, education, and community well-being.',
+      'Sara is honored to serve as the Chair of G&A Foundation and is passionate about helping the organization expand its impact and make mental health a priority within the community.',
+    ],
+  },
+  { name: 'Melissa Barnett', initials: 'MB', title: 'Board Member' },
+  { name: 'Claudia Casasola', initials: 'CC', title: 'Board Member' },
 ];
 
 const values = [
@@ -30,6 +61,27 @@ const values = [
     desc: 'We meet people where they are, building partnerships that strengthen our region from the ground up.',
   },
 ];
+
+/** 4:5 headshot, or a neutral brand-blue initials avatar when no photo exists. */
+function Portrait({ person, className = '' }: { person: Person; className?: string }) {
+  return (
+    <div className={`relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-brand-blue ${className}`}>
+      {person.photo ? (
+        <Image
+          src={person.photo}
+          alt={`Headshot of ${person.name}, ${person.title}`}
+          fill
+          sizes="(min-width: 640px) 320px, 100vw"
+          className="object-cover"
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center" aria-hidden="true">
+          <span className="text-4xl font-bold text-white">{person.initials}</span>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -79,45 +131,63 @@ export default function AboutPage() {
 
       {/* Leadership */}
       <section className="py-20 px-4 bg-brand-light">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
           <ScrollAnimation>
-            <h2 className="text-3xl font-bold text-brand-dark mb-12 text-center">Our Leadership</h2>
-            {/* Executive Director */}
-            <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm mb-16 max-w-2xl mx-auto">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                <div className="w-20 h-20 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-2xl font-bold">TG</span>
+            <h2 className="text-3xl font-bold text-brand-dark mb-3 text-center">Our Leadership</h2>
+            <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto text-sm">
+              Foundation staff lead day to day operations, guided by an independent Board
+              of Directors.
+            </p>
+          </ScrollAnimation>
+
+          {/* Staff */}
+          <ScrollAnimation>
+            <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Staff</h3>
+            <div className="mb-20 space-y-8">
+              {staff.map((person) => (
+                <div
+                  key={person.name}
+                  className="mx-auto max-w-3xl rounded-2xl bg-white p-6 shadow-sm sm:p-8"
+                >
+                  <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+                    <div className="mx-auto w-40 flex-shrink-0 sm:mx-0 sm:w-48">
+                      <Portrait person={person} />
+                    </div>
+                    <div className="text-center sm:text-left">
+                      <h4 className="text-xl font-bold text-brand-dark">{person.name}</h4>
+                      <p className="mb-3 font-medium text-brand-blue">{person.title}</p>
+                      <div className="space-y-3 text-sm leading-relaxed text-gray-600">
+                        {person.bio?.map((para) => (
+                          <p key={para.slice(0, 40)}>{para}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-brand-dark">Toni Gaines, LPCC</h3>
-                  <p className="text-brand-blue font-medium mb-3">Founder and Executive Director</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Toni Gaines is a Licensed Professional Clinical Counselor and the founder
-                    of both G&amp;A Counseling and G&amp;A Foundation. With over seven years of
-                    experience leading behavioral health services in Madison County, Toni is
-                    dedicated to removing barriers to mental health care across the Bluegrass
-                    region.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </ScrollAnimation>
 
           {/* Board */}
           <ScrollAnimation>
-            <h2 className="text-2xl font-bold text-brand-dark mb-3 text-center">Board of Directors</h2>
+            <h3 className="text-2xl font-bold text-brand-dark mb-3 text-center">Board of Directors</h3>
             <p className="text-gray-600 text-center mb-10 max-w-xl mx-auto text-sm">
               G&amp;A Foundation is governed by an independent Board of Directors committed
               to transparency, accountability, and community impact.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-3">
               {boardMembers.map((member) => (
-                <div key={member.name} className="bg-white rounded-2xl p-6 shadow-sm text-center">
-                  <div className="w-16 h-16 rounded-full bg-brand-blue flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-lg font-bold">{member.initials}</span>
-                  </div>
-                  <h3 className="font-bold text-brand-dark">{member.name}</h3>
-                  <p className="text-gray-500 text-sm">Board Member</p>
+                <div key={member.name} className="rounded-2xl bg-white p-6 shadow-sm">
+                  <Portrait person={member} className="mb-5" />
+                  <h4 className="font-bold text-brand-dark">{member.name}</h4>
+                  <p className="text-sm text-gray-500">{member.title}</p>
+                  {member.bio ? (
+                    <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-600">
+                      {member.bio.map((para) => (
+                        <p key={para.slice(0, 40)}>{para}</p>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               ))}
             </div>
