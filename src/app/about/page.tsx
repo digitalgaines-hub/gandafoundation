@@ -19,10 +19,12 @@ const staff: Person[] = [
   {
     name: 'Toni Gaines, LPCC',
     initials: 'TG',
-    title: 'Founder and Executive Director',
+    title: 'Executive Director',
     photo: '/images/team/toni-gaines-headshot-portrait.webp',
     bio: [
-      'Toni Gaines is a Licensed Professional Clinical Counselor and the founder of both G&A Counseling and G&A Foundation. With over seven years of experience leading behavioral health services in Madison County, Toni is dedicated to removing barriers to mental health care across the Bluegrass region.',
+      'Toni Gaines is a Licensed Professional Clinical Counselor (LPCC) and the founder of G&A Counseling, a behavioral health practice she opened in Richmond in 2017. Over nearly a decade, she has grown the practice into a team of more than 20 professionals providing school-based mental health and targeted case management services to children, families, and adults across Madison County.',
+      'Her work in schools and with families who rely on Medicaid has shown her how often location, cost, and circumstance stand between people and the care they need. She founded G&A Foundation to help close those gaps, so that every person in the Bluegrass region can access quality mental health and substance use services.',
+      'As Executive Director, Toni leads the Foundation\'s programs and partnerships and works alongside the Board of Directors to expand its reach and make mental health a priority in the community.',
     ],
   },
 ];
