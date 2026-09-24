@@ -108,8 +108,7 @@ export default function AboutPage() {
               <p>
                 G&amp;A Foundation was established in 2026 as a 501(c)(3) nonprofit
                 organization affiliated with G&amp;A Counseling, a behavioral health
-                practice that has served the Richmond, Kentucky community for over seven
-                years.
+                practice that has served the Richmond, Kentucky community since 2017.
               </p>
               <p>
                 The foundation was created to expand access to mental health and substance
