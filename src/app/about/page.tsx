@@ -135,19 +135,16 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl">
           <ScrollAnimation>
             <h2 className="text-3xl font-bold text-brand-dark mb-3 text-center">Our Leadership</h2>
-            <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto text-sm">
-              An independent Board of Directors governs G&amp;A Foundation, and Foundation
-              staff lead its day to day operations.
+            <p className="text-gray-600 text-center mb-14 max-w-2xl mx-auto text-sm">
+              G&amp;A Foundation is governed by an independent Board of Directors committed
+              to transparency, accountability, and community impact. Foundation staff lead
+              the organization&apos;s day to day programs and operations.
             </p>
           </ScrollAnimation>
 
           {/* Board */}
           <ScrollAnimation>
-            <h3 className="text-2xl font-bold text-brand-dark mb-3 text-center">Board of Directors</h3>
-            <p className="text-gray-600 text-center mb-10 max-w-xl mx-auto text-sm">
-              G&amp;A Foundation is governed by an independent Board of Directors committed
-              to transparency, accountability, and community impact.
-            </p>
+            <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Board of Directors</h3>
             <div className="mb-20 grid grid-cols-1 items-start gap-6 sm:grid-cols-3">
               {boardMembers.map((member) => (
                 <div key={member.name} className="rounded-2xl bg-white p-6 shadow-sm">
