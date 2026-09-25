@@ -136,15 +136,40 @@ export default function AboutPage() {
           <ScrollAnimation>
             <h2 className="text-3xl font-bold text-brand-dark mb-3 text-center">Our Leadership</h2>
             <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto text-sm">
-              Foundation staff lead day to day operations, guided by an independent Board
-              of Directors.
+              An independent Board of Directors governs G&amp;A Foundation, and Foundation
+              staff lead its day to day operations.
             </p>
+          </ScrollAnimation>
+
+          {/* Board */}
+          <ScrollAnimation>
+            <h3 className="text-2xl font-bold text-brand-dark mb-3 text-center">Board of Directors</h3>
+            <p className="text-gray-600 text-center mb-10 max-w-xl mx-auto text-sm">
+              G&amp;A Foundation is governed by an independent Board of Directors committed
+              to transparency, accountability, and community impact.
+            </p>
+            <div className="mb-20 grid grid-cols-1 items-start gap-6 sm:grid-cols-3">
+              {boardMembers.map((member) => (
+                <div key={member.name} className="rounded-2xl bg-white p-6 shadow-sm">
+                  <Portrait person={member} className="mb-5" />
+                  <h4 className="font-bold text-brand-dark">{member.name}</h4>
+                  <p className="text-sm text-gray-500">{member.title}</p>
+                  {member.bio ? (
+                    <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-600">
+                      {member.bio.map((para) => (
+                        <p key={para.slice(0, 40)}>{para}</p>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </ScrollAnimation>
 
           {/* Staff */}
           <ScrollAnimation>
-            <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Staff</h3>
-            <div className="mb-20 space-y-8">
+            <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Foundation Staff</h3>
+            <div className="space-y-8">
               {staff.map((person) => (
                 <div
                   key={person.name}
@@ -169,30 +194,6 @@ export default function AboutPage() {
             </div>
           </ScrollAnimation>
 
-          {/* Board */}
-          <ScrollAnimation>
-            <h3 className="text-2xl font-bold text-brand-dark mb-3 text-center">Board of Directors</h3>
-            <p className="text-gray-600 text-center mb-10 max-w-xl mx-auto text-sm">
-              G&amp;A Foundation is governed by an independent Board of Directors committed
-              to transparency, accountability, and community impact.
-            </p>
-            <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-3">
-              {boardMembers.map((member) => (
-                <div key={member.name} className="rounded-2xl bg-white p-6 shadow-sm">
-                  <Portrait person={member} className="mb-5" />
-                  <h4 className="font-bold text-brand-dark">{member.name}</h4>
-                  <p className="text-sm text-gray-500">{member.title}</p>
-                  {member.bio ? (
-                    <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-600">
-                      {member.bio.map((para) => (
-                        <p key={para.slice(0, 40)}>{para}</p>
-                      ))}
-                    </div>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </ScrollAnimation>
         </div>
       </section>
 
