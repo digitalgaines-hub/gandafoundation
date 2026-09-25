@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 
 type Person = {
   name: string;
-  initials: string;
   title: string;
   photo?: string;
   bio?: string[];
@@ -18,7 +17,6 @@ type Person = {
 const staff: Person[] = [
   {
     name: 'Toni Gaines, LPCC',
-    initials: 'TG',
     title: 'Executive Director',
     photo: '/images/team/toni-gaines-headshot-portrait.webp',
     bio: [
@@ -32,7 +30,6 @@ const staff: Person[] = [
 const boardMembers: Person[] = [
   {
     name: 'Sara Szymkowiak',
-    initials: 'SS',
     title: 'Board Chair',
     photo: '/images/team/sara-headshot-portrait.webp',
     bio: [
@@ -41,8 +38,8 @@ const boardMembers: Person[] = [
       'Sara is honored to serve as the Chair of G&A Foundation and is passionate about helping the organization expand its impact and make mental health a priority within the community.',
     ],
   },
-  { name: 'Melissa Barnett', initials: 'MB', title: 'Board Member' },
-  { name: 'Claudia Casasola', initials: 'CC', title: 'Board Member' },
+  { name: 'Melissa Barnett', title: 'Board Member' },
+  { name: 'Claudia Casasola', title: 'Board Member' },
 ];
 
 const values = [
@@ -64,10 +61,13 @@ const values = [
   },
 ];
 
-/** 4:5 headshot, or a neutral brand-blue initials avatar when no photo exists. */
+/**
+ * 4:5 headshot. Until a photo is delivered the card shows the Foundation mark on a
+ * backdrop tinted to match the real headshots, so the grid still reads as one set.
+ */
 function Portrait({ person, className = '' }: { person: Person; className?: string }) {
   return (
-    <div className={`relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-brand-blue ${className}`}>
+    <div className={`relative aspect-[4/5] w-full overflow-hidden rounded-2xl ${className}`}>
       {person.photo ? (
         <Image
           src={person.photo}
@@ -77,8 +77,19 @@ function Portrait({ person, className = '' }: { person: Person; className?: stri
           className="object-cover"
         />
       ) : (
-        <div className="flex h-full w-full items-center justify-center" aria-hidden="true">
-          <span className="text-4xl font-bold text-white">{person.initials}</span>
+        <div
+          className="flex h-full w-full items-center justify-center bg-gradient-to-b from-[#EDF1F4] to-[#D9E0E7]"
+          aria-hidden="true"
+        >
+          <div className="flex aspect-square w-3/5 items-center justify-center rounded-full bg-white/80">
+            <Image
+              src="/images/team/gaf-mark.png"
+              alt=""
+              width={474}
+              height={336}
+              className="w-3/5 opacity-70"
+            />
+          </div>
         </div>
       )}
     </div>
