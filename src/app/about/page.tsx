@@ -39,7 +39,11 @@ const boardMembers: Person[] = [
     ],
   },
   { name: 'Melissa Barnett', title: 'Board Member' },
-  { name: 'Claudia Casasola', title: 'Board Member' },
+  {
+    name: 'Claudia Casasola',
+    title: 'Vice Chair and Treasurer',
+    photo: '/images/team/claudia-casasola-headshot-portrait.webp',
+  },
 ];
 
 const values = [
