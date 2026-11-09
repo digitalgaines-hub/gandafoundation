@@ -43,6 +43,9 @@ const boardMembers: Person[] = [
     name: 'Claudia Casasola',
     title: 'Vice Chair and Treasurer',
     photo: '/images/team/claudia-casasola-headshot-portrait.webp',
+    bio: [
+      'Claudia Casasola serves as Vice Chair and Treasurer of the G&A Foundation Board of Directors, bringing a career rooted in community impact and strategic leadership. She spent a decade as an elementary, middle, and high school teacher in Guatemala before moving into IT project management, her professional focus for the last 14 years. Guided by the belief that mental healthcare is an essential right, Claudia works to ensure every individual receives proper, compassionate care, regardless of their background or financial situation.',
+    ],
   },
 ];
 
